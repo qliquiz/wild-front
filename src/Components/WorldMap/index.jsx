@@ -43,7 +43,7 @@ const blueIcon = L.icon({
 });
 
 
-const WorldMap = ({width, height, isCreate}) => {
+const WorldMap = ({width, height, isCreate, setLat, setLon}) => {
   const [markers, setMarkers] = useState([]);
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const WorldMap = ({width, height, isCreate}) => {
 
         if (!isCreate) {
           // Отображаем все поинты, если это главная страница
-          const response = await axios.get('/api/coordinates');
+          const response = await axios.get('http://localhost:4444/places');
           setMarkers(response.data);
         }
 
@@ -69,6 +69,8 @@ const WorldMap = ({width, height, isCreate}) => {
 
     const { lat, lng } = event.latlng;
 
+    setLat(lat);
+    setLon(lng);
     setMarkers([ { id: 1, category: 1, latitude: lat, longitude: lng } ]);
   };
 
@@ -92,6 +94,11 @@ const WorldMap = ({width, height, isCreate}) => {
                 <p>Название: {marker.name}</p>
                 <p>Категория: {marker.category}</p>
                 <p>Описание: {marker.description}</p>
+                <div>
+                  {marker.photos && marker.photos.map((photo, index) => (
+                    <img key={index} src={`http://localhost:4444/${photo}`} alt={`Photo ${index}`} width="100" />
+                  ))}
+                </div>
               
               </Popup>
             )}

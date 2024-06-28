@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import WorldMap from "../WorldMap";
 import { Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+
 function MainForm() {
     const navigate = useNavigate();
 
@@ -11,7 +12,7 @@ function MainForm() {
         event.preventDefault();
         
         navigate("/create");
-      };
+    };
 
     return ( 
         <div className={styles.form_container}>
