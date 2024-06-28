@@ -13,6 +13,41 @@ import FileUploadIcon from '@mui/icons-material/FileUpload';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+/* const UploadPhotos = () => {
+  const [photos, setPhotos] = useState([]);
+
+  const handlePhotoChange = (e) => {
+    setPhotos(e.target.files);
+  };
+
+  const uploadPhotos = async () => {
+    const formData = new FormData();
+    for (let i = 0; i < photos.length; i++) {
+      formData.append('photos', photos[i]);
+    }
+
+    try {
+      const response = await axios.post('http://localhost:3000/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      console.log('Photos uploaded successfully:', response.data);
+    } catch (error) {
+      console.error('Error uploading photos:', error);
+    }
+  };
+
+  return (
+    <div>
+      <input type="file" multiple onChange={handlePhotoChange} />
+      <button onClick={uploadPhotos}>Upload Photos</button>
+    </div>
+  );
+}; */
+
+
 function CreateForm() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -26,9 +61,9 @@ function CreateForm() {
 
   const navigate = useNavigate();
 
-  const handleCategoryChange = (event) => {
+  /* const handleCategoryChange = (event) => {
     setCategory(event.target.value);
-  };
+  }; */
 
   const handleImageChange = (event) => {
     const files = event.target.files;
