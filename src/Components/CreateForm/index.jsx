@@ -52,7 +52,7 @@ function CreateForm() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
-  const [images, setImages] = useState([]); // Массив для хранения файлов
+  const [images, setImages] = useState([]);
   const [imagePreviews, setImagePreviews] = useState([]);
   const [lat, setLat] = useState(0);
   const [lon, setLon] = useState(0);
@@ -150,7 +150,7 @@ function CreateForm() {
         styles={{
           menu: (provided) => ({
             ...provided,
-            zIndex: 100099, //  Установите высокий z-index
+            zIndex: 100099,
             height: 100,
             fontFamily: '"Roboto", sans-serif',
             fontSize: '1rem'
@@ -158,7 +158,7 @@ function CreateForm() {
           control: (provided) => ({
             ...provided,
             marginTop: '15px',
-            height: '56px',  // Установите максимальную высоту
+            height: '56px', 
             paddingLeft: '4px',
             fontFamily: '"Roboto", sans-serif',
             fontSize: '1rem'
@@ -169,7 +169,7 @@ function CreateForm() {
           { value: 2, label: 'Красивое место' },
           { value: 3, label: 'Пляж' },
         ]}
-        defaultValue={null} // Установите значение по умолчанию как null
+        defaultValue={null}
       />
   
 
