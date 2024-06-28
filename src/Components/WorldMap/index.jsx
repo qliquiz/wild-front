@@ -92,7 +92,7 @@ const WorldMap = ({width, height, isCreate, setLat, setLon}) => {
               <Popup>
                 
                 <p>Название: {marker.name}</p>
-                <p>Категория: {marker.category}</p>
+                {/* <p>Категория: {marker.category}</p> */}
                 <p>Описание: {marker.description}</p>
                 <div>
                   {marker.photos && marker.photos.map((photo, index) => (

@@ -16,10 +16,10 @@ function MainForm() {
 
     return ( 
         <div className={styles.form_container}>
-            <Typography fontWeight={600} variant="h4" marginBottom="15px">Места для отдыха на Байкале</Typography>
+            <Typography fontWeight={600} variant="h4" marginBottom="15px">Места отдыха</Typography>
             <WorldMap width={"100%"} height={400}/>
             
-            <Button variant="contained" type="submit" onClick={handleSubmit}>Создать своё место</Button>
+            <Button variant="contained" type="submit" onClick={handleSubmit}>Добавить место</Button>
         </div>
      );
 }

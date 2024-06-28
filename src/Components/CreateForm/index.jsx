@@ -51,7 +51,7 @@ import { useNavigate } from 'react-router-dom';
 function CreateForm() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState(0);
   const [images, setImages] = useState([]);
   const [imagePreviews, setImagePreviews] = useState([]);
   const [lat, setLat] = useState(0);
@@ -61,9 +61,9 @@ function CreateForm() {
 
   const navigate = useNavigate();
 
-  /* const handleCategoryChange = (event) => {
-    setCategory(event.target.value);
-  }; */
+   const handleCategoryChange = (value) => {
+    setCategory(value);
+  }; 
 
   const handleImageChange = (event) => {
     const files = event.target.files;
@@ -124,7 +124,7 @@ function CreateForm() {
 
   return (
     <div className={styles.form_container}>
-      <Typography fontWeight={600} variant="h4">Создание места</Typography>
+      <Typography fontWeight={600} variant="h4">Добавление места</Typography>
       <Typography marginTop="10px" fontWeight={500} variant="h5">Заполните данные о месте:</Typography>
 
       <TextField 
@@ -169,6 +169,7 @@ function CreateForm() {
           { value: 2, label: 'Красивое место' },
           { value: 3, label: 'Пляж' },
         ]}
+        onChange={handleCategoryChange}
         defaultValue={null}
       />
   
